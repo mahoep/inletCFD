@@ -18,29 +18,33 @@ FoamFile
 
 maxCellSize     0.001;
 
-surfaceFile     "geom/feature.fms";
+surfaceFile     "geom/feature.stl";
 
 localRefinement
 {
         test_0
         {
             additionalRefinementLevels  2;
+            refinementThickness 0.001;
+        }
 
+        test_5
+        {
+            additionalRefinementLevels  2;
+            refinementThickness 0.001;
+        }
+
+        test_4
+        {
+            additionalRefinementLevels  2;
             refinementThickness 0.001;
         }
 }
 
-
-removeCellsIntersectingPatches
-{
-    test_3
-    {
-        keepCells 1;
-    }
-}
-
 boundaryLayers
 {
+    optimiseLayer           1;
+
     patchBoundaryLayers
     {
         test_0
@@ -59,16 +63,26 @@ boundaryLayers
             optimiseLayer           1;
             allowDiscontinuity      0;
         }
-    }
+
+        /*test_5
+        {
+            nLayers         1;
+            thicknessRatio  1.2;
+            optimiseLayer           1;
+            allowDiscontinuity      0;
+        }*/
+    
 
     optimisationParameters
     {
-        nSmoothNormals 10;
-        maxNumIterations 10;
-        reCalculateNormals 1;
-        featureSizeFactor  0.1;
+    nSmoothNormals 10;
+    maxNumIterations 10;
+    reCalculateNormals 1;
+    featureSizeFactor  0.1;
     }
 }
+}
+
 
 meshQualitySettings
 {   

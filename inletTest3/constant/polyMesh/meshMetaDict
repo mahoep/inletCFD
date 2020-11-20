@@ -15,20 +15,45 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-surfaceFile     "geom/feature.fms";
+surfaceFile     "geom/feature.stl";
 
 surfaceMeta
 {
     nPoints         215;
     nFacets         215;
-    nPatches        1;
-    nFeatureEdges   221;
+    nPatches        6;
+    nFeatureEdges   0;
     patches
     {
-        test
+        test_0
         {
             type            empty;
-            nFacets         215;
+            nFacets         205;
+        }
+        test_1
+        {
+            type            empty;
+            nFacets         2;
+        }
+        test_2
+        {
+            type            empty;
+            nFacets         2;
+        }
+        test_3
+        {
+            type            empty;
+            nFacets         2;
+        }
+        test_4
+        {
+            type            empty;
+            nFacets         2;
+        }
+        test_5
+        {
+            type            empty;
+            nFacets         2;
         }
     }
     pointSubsets

@@ -15,61 +15,54 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-8
+7
 (
-    test
-    {
-        type            empty;
-        inGroups        1(empty);
-        nFaces          2660;
-        startFace       116041;
-    }
     bottomEmptyFaces
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          58318;
-        startFace       118701;
+        nFaces          64010;
+        startFace       127415;
     }
     topEmptyFaces
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          58318;
-        startFace       177019;
+        nFaces          64010;
+        startFace       191425;
     }
     inlet
     {
         type            patch;
-        nFaces          0;
-        startFace       235337;
+        nFaces          188;
+        startFace       255435;
     }
     outlet
     {
         type            patch;
-        nFaces          0;
-        startFace       235337;
+        nFaces          113;
+        startFace       255623;
     }
     walls
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          0;
-        startFace       235337;
+        nFaces          2504;
+        startFace       255736;
     }
     rightWall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          0;
-        startFace       235337;
+        nFaces          85;
+        startFace       258240;
     }
     symmetryLine
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          0;
-        startFace       235337;
+        nFaces          364;
+        startFace       258325;
     }
 )
 
