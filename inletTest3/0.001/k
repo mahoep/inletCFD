@@ -10,50 +10,54 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volScalarField;
-    location    "0";
-    object      epsilon;
+    location    "0.001";
+    object      k;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -3 0 0 0 0];
+dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 200;
+
+internalField   uniform 1;
 
 boundaryField
 {
+    bottomEmptyFaces
+    {
+        type            empty;
+    }
+    topEmptyFaces
+    {
+        type            empty;
+    }
     inlet
     {
-        type            turbulentMixingLengthDissipationRateInlet;
-        mixingLength    0.01;       // 1cm - half channel height
-        value           $internalField;
+        type            turbulentIntensityKineticEnergyInlet;
+        intensity       0.15;
+        value           uniform 1;
     }
-
     outlet
     {
         type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        inletValue      uniform 1;
+        value           uniform 1;
     }
-
+    walls
+    {
+        type            kqRWallFunction;
+        value           uniform 1;
+    }
+    rightWall
+    {
+        lowReCorrection 0;
+        blending        stepwise;
+        n               2;
+        type            epsilonWallFunction;
+        value           uniform 1;
+    }
     symmetryLine
     {
         type            symmetryPlane;
-    }
-
-    walls
-    {
-        type            epsilonWallFunction;
-        value           $internalField;
-    }
-
-    rightWall
-    {
-        type            zeroGradient;
-    }
-
-    defaultFaces
-    {
-        type            empty;
     }
 }
 

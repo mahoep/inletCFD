@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (100 0 0);
+internalField   uniform (10 0 0);
 
 boundaryField
 {
@@ -47,8 +47,7 @@ boundaryField
 
     rightWall
     {
-        type            fixedValue;
-        value           uniform (0 0 0);
+        type            noSlip;
     }
 
     defaultFaces
