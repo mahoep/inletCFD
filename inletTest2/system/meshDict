@@ -1,0 +1,83 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+maxCellSize     0.001;
+
+surfaceFile     "geom/feature.stl";
+
+localRefinement
+{
+        test_0
+        {
+            additionalRefinementLevels  2;
+
+            refinementThickness 0.001;
+
+        }
+}
+
+
+
+boundaryLayers
+{
+    patchBoundaryLayers
+    {
+        test_0
+        {
+            nLayers                 5;
+            thicknessRatio          1.2;
+            optimiseLayer           1;
+            maxFirstLayerThickness  0.0005;
+        }
+
+        test_4
+        {
+            nLayers         3;
+            thicknessRatio  1.2;
+            optimiseLayer   1;
+        }
+    }
+
+    optimisationParameters
+    {
+        nSmoothNormals 10;
+        maxNumIterations 10;
+        reCalculateNormals 10;
+        featureSizeFactor  0.1;
+    }
+}
+
+meshQualitySettings
+{   
+        maxNonOrthogonality 10;
+        minTetQuality       1e-30;
+}
+
+objectRefinements
+{
+    cone
+    {
+        type        cone;
+        cellSize    0.00025;
+        p0          (0.105 0.101 0.1);
+        p1          (0.105 0.101 0);
+        radius0     0.005;
+        radius1     0.005;
+    }
+}
+// ************************************************************************* //

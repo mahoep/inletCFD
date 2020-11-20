@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 1.3e5;
+
+boundaryField
+{
+    inlet
+    {
+
+        type            uniformTotalPressure;
+        gamma           1.4;
+
+        p0              1.5e5;
+    }
+    outlet
+    {
+        type            fixedValue;
+        value           $internalField;
+        //type                zeroGradient;
+
+       //type            waveTransmissive;
+       //value           uniform 1.3e5;    //important for correct I/O
+       //field           p;                //the name of the field that we are working on
+       //gamma           1.4;              //the ratio of specific heats
+       //phi             phi;             //the name of the volumetric flux field ( or if you use the mass flux phi, it will be divided by rho)
+       //rho             rho;              //the name of the density field
+       //fieldInf        1.3e5;            //the far-field value to be applied to p
+    }
+
+    symmetryLine
+    {
+        type            symmetryPlane;
+    }
+
+    walls
+    {
+        type            zeroGradient;
+    }
+
+    defaultFaces
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //
