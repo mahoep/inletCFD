@@ -49,7 +49,7 @@ solvers
         relTol          0.1;
     }
 
-    "(k|epsilon).*"
+    "(k|epsilon|omega).*"
     {
         solver          smoothSolver;
         smoother        symGaussSeidel;

@@ -32,6 +32,7 @@ divSchemes
     div(phid,p)     Gauss limitedLinear 1;
     div(phi,e)      Gauss limitedLinear 1;
     div(phi,epsilon) Gauss limitedLinear 1;
+    div(phi,omega) Gauss limitedLinear 1;
     div(phi,h)      Gauss limitedLinear 1;
     div(phi,k)      Gauss limitedLinear 1;
     div(phi,K)      Gauss limitedLinear 1;
@@ -54,5 +55,9 @@ snGradSchemes
     default         corrected;
 }
 
+wallDist
+{
+    method meshWave;
+}
 
 // ************************************************************************* //

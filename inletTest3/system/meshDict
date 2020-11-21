@@ -16,11 +16,11 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-maxCellSize     0.003;
+maxCellSize     0.002;
 
 surfaceFile     "geom/feature.stl";
 
-/*
+
 localRefinement
 {
         test_0
@@ -31,17 +31,17 @@ localRefinement
 
         test_5
         {
-            additionalRefinementLevels  2;
+            additionalRefinementLevels  1;
             refinementThickness 0.001;
         }
 
         test_4
         {
-            additionalRefinementLevels  2;
+            additionalRefinementLevels  1;
             refinementThickness 0.001;
         }
 }
-*/
+
 
 boundaryLayers
 {
@@ -51,10 +51,10 @@ boundaryLayers
     {
         test_0
         {
-            nLayers                 4;
-            thicknessRatio          1.2;
+            nLayers                 3;
+            thicknessRatio          1.3;
             optimiseLayer           1;
-            minFirstLayerThickness  0.002;
+            maxFirstLayerThickness  0.002;
             allowDiscontinuity      0;
         }
 
@@ -85,19 +85,20 @@ meshQualitySettings
         //minCellDeterminant
 }
 
-/*
+
 objectRefinements
 {
     cone
     {
         type        cone;
-        cellSize    0.00025;
+        cellSize    0.001;
         p0          (0.1017 0.1525 0.1);
         p1          (0.1017 0.1525 0);
         radius0     0.003;
         radius1     0.003;
     }
 
+    /*
     boxEx
     {
         type            box;
@@ -107,7 +108,9 @@ objectRefinements
         lengthY         0.005;
         lengthZ         0.01;
     }
+    */
 
+    /*
     lineEx
     {
         type            line;
@@ -116,6 +119,7 @@ objectRefinements
         p1          (0.3551 0 0);
         refinementThickness        0.005;
     }
+    */
 }
-*/
+
 // ************************************************************************* //
