@@ -16,10 +16,11 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-maxCellSize     0.001;
+maxCellSize     0.003;
 
 surfaceFile     "geom/feature.stl";
 
+/*
 localRefinement
 {
         test_0
@@ -40,6 +41,7 @@ localRefinement
             refinementThickness 0.001;
         }
 }
+*/
 
 boundaryLayers
 {
@@ -52,7 +54,7 @@ boundaryLayers
             nLayers                 4;
             thicknessRatio          1.2;
             optimiseLayer           1;
-            maxFirstLayerThickness  0.0005;
+            minFirstLayerThickness  0.002;
             allowDiscontinuity      0;
         }
 
@@ -63,16 +65,7 @@ boundaryLayers
             optimiseLayer           1;
             allowDiscontinuity      0;
         }
-
-        /*test_5
-        {
-            nLayers         1;
-            thicknessRatio  1.2;
-            optimiseLayer           1;
-            allowDiscontinuity      0;
-        }*/
-    
-
+    }
     optimisationParameters
     {
     nSmoothNormals 10;
@@ -80,7 +73,6 @@ boundaryLayers
     reCalculateNormals 1;
     featureSizeFactor  0.1;
     }
-}
 }
 
 
@@ -93,6 +85,7 @@ meshQualitySettings
         //minCellDeterminant
 }
 
+/*
 objectRefinements
 {
     cone
@@ -105,16 +98,6 @@ objectRefinements
         radius1     0.003;
     }
 
-    /*coneEx2
-    {
-        type            cone;
-        cellSize        0.00025;
-        p0          (0.17759 0.1518 0);
-        p1          (0.17759 0.1518 0.1);
-        radius0     0.03;
-        radius1     0.03;
-    }*/
-
     boxEx
     {
         type            box;
@@ -125,16 +108,6 @@ objectRefinements
         lengthZ         0.01;
     }
 
-    /*boxEx2
-    {
-        type            box;
-        cellSize        0.0005;
-        centre          (0.17759 0.1518 0);
-        lengthX         0.01;
-        lengthY         0.05;
-        lengthZ         0.01;
-    }*/
-
     lineEx
     {
         type            line;
@@ -144,4 +117,5 @@ objectRefinements
         refinementThickness        0.005;
     }
 }
+*/
 // ************************************************************************* //

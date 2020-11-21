@@ -48,7 +48,9 @@ boundaryField
 
     rightWall
     {
-        type            zeroGradient;
+        type            inletOutlet;
+        inletValue      $internalField;
+        value           $internalField;
     }
 
     defaultFaces

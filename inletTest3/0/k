@@ -47,8 +47,8 @@ boundaryField
 
     rightWall
     {
-        type            epsilonWallFunction;
-        value           $internalField;
+        type            inletOutlet;
+        inletValue      $internalField;
     }
     
     defaultFaces

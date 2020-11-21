@@ -55,7 +55,8 @@ boundaryField
 
     rightWall
     {
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform 1.49e5;
     }
 
     defaultFaces

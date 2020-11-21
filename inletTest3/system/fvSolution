@@ -51,9 +51,8 @@ solvers
 
     "(k|epsilon).*"
     {
-        solver          PBiCG;
+        solver          smoothSolver;
         smoother        symGaussSeidel;
-        preconditioner  DILU;
         tolerance       1e-07;
         relTol          0.05;
     }
@@ -63,7 +62,7 @@ PIMPLE
 {
     nOuterCorrectors 1;
     nCorrectors      2;
-    nNonOrthogonalCorrectors 2;
+    nNonOrthogonalCorrectors 1;
     momentumPredictor yes;
 
     transonic            yes;
