@@ -1,0 +1,125 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+maxCellSize     0.002;
+
+surfaceFile     "geom/feature.stl";
+
+
+localRefinement
+{
+        test_0
+        {
+            additionalRefinementLevels  2;
+            refinementThickness 0.001;
+        }
+
+        test_5
+        {
+            additionalRefinementLevels  1;
+            refinementThickness 0.001;
+        }
+
+        test_4
+        {
+            additionalRefinementLevels  1;
+            refinementThickness 0.001;
+        }
+}
+
+
+boundaryLayers
+{
+    optimiseLayer           1;
+
+    patchBoundaryLayers
+    {
+        test_0
+        {
+            nLayers                 3;
+            thicknessRatio          1.3;
+            optimiseLayer           1;
+            maxFirstLayerThickness  0.002;
+            allowDiscontinuity      0;
+        }
+
+        test_4
+        {
+            nLayers         3;
+            thicknessRatio  1.2;
+            optimiseLayer           1;
+            allowDiscontinuity      0;
+        }
+    }
+    optimisationParameters
+    {
+    nSmoothNormals 10;
+    maxNumIterations 10;
+    reCalculateNormals 1;
+    featureSizeFactor  0.1;
+    }
+}
+
+
+meshQualitySettings
+{   
+        maxNonOrthogonality 30;
+        maxSkewness        0.7;
+        minHexQuality       1e-10;
+        //maxAngle;
+        //minCellDeterminant
+}
+
+
+objectRefinements
+{
+    cone
+    {
+        type        cone;
+        cellSize    0.001;
+        p0          (0.1017 0.203 0.1);
+        p1          (0.1017 0.203 0);
+        radius0     0.003;
+        radius1     0.003;
+    }
+
+    /*
+    boxEx
+    {
+        type            box;
+        cellSize        0.0005;
+        centre          (0.3551 0.0508 0);
+        lengthX         0.01;
+        lengthY         0.005;
+        lengthZ         0.01;
+    }
+    */
+
+    /*
+    lineEx
+    {
+        type            line;
+        cellSize        0.001;
+        p0          (0.3551 0.045 0);
+        p1          (0.3551 0 0);
+        refinementThickness        0.005;
+    }
+    */
+}
+
+// ************************************************************************* //
