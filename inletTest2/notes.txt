@@ -6,3 +6,6 @@ maxR = 5*.0254    # radius of entire geometry
 length_Radius = 1.6 # ratio of length over radius of just the bezeir curve
 downStreamDist = 4*.0254  # straight line distance after bezier curve to outlet
 upStreamDist = 4 *.0254    # space between inflection point and inlet
+
+Approximate angle of contraction: 33.77490207792549
+Length over Radius: 1.4959548666498785
