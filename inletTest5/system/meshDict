@@ -26,7 +26,7 @@ localRefinement
         test_0
         {
             additionalRefinementLevels  2;
-            refinementThickness 0.003;
+            refinementThickness 0.0005;
         }
 
         test_5
@@ -88,7 +88,7 @@ meshQualitySettings
 
 objectRefinements
 {
-    cone
+   /* cone
     {
         type        cone;
         cellSize    0.0005;
@@ -97,7 +97,7 @@ objectRefinements
         p1          (0.1021 0.076 0);
         radius0     0.002;
         radius1     0.002;
-    }
+    }*/
 
     /*
     boxEx
