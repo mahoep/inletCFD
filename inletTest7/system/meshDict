@@ -26,7 +26,7 @@ localRefinement
         test_0
         {
             additionalRefinementLevels  2;
-            refinementThickness 0.0005;
+            refinementThickness 0.001;
         }
 
         test_5
@@ -54,7 +54,7 @@ boundaryLayers
             nLayers                 3;
             thicknessRatio          1.2;
             optimiseLayer           1;
-            maxFirstLayerThickness  0.002;
+            FirstLayerThickness  0.002;
             allowDiscontinuity      0;
         }
 
@@ -68,10 +68,10 @@ boundaryLayers
     }
     optimisationParameters
     {
-    nSmoothNormals 10;
-    maxNumIterations 10;
-    reCalculateNormals 1;
-    featureSizeFactor  0.1;
+        nSmoothNormals 10;
+        maxNumIterations 10;
+        reCalculateNormals 1;
+        featureSizeFactor  0.1;
     }
 }
 
@@ -88,7 +88,7 @@ meshQualitySettings
 
 objectRefinements
 {
-   /* cone
+    /*cone
     {
         type        cone;
         cellSize    0.0005;
