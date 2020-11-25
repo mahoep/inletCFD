@@ -1,0 +1,12 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # Tutorial run functions
+
+runApplication surfaceFeatureEdges geom/contraction.stl geom/feature.stl -angle 60
+runApplication cartesian2DMesh
+runApplication createPatch -overwrite
+runApplication checkMesh -constant
+##runApplication rhoPimpleFoam > log &
+#runApplication reconstrucutPar
+
+#------------------------------------------------------------------------------
