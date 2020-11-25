@@ -16,7 +16,7 @@ FoamFile
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-maxCellSize     0.001;
+maxCellSize     0.002;
 
 surfaceFile     "geom/feature.stl";
 

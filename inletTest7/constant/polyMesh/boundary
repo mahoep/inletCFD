@@ -21,48 +21,48 @@ FoamFile
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          35105;
-        startFace       69756;
+        nFaces          10108;
+        startFace       19982;
     }
     topEmptyFaces
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          35105;
-        startFace       104861;
+        nFaces          10108;
+        startFace       30090;
     }
     inlet
     {
         type            patch;
-        nFaces          134;
-        startFace       139966;
+        nFaces          70;
+        startFace       40198;
     }
     outlet
     {
         type            patch;
-        nFaces          62;
-        startFace       140100;
+        nFaces          35;
+        startFace       40268;
     }
     walls
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          1360;
-        startFace       140162;
+        nFaces          681;
+        startFace       40303;
     }
     rightWall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          53;
-        startFace       141522;
+        nFaces          30;
+        startFace       40984;
     }
     symmetryLine
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          280;
-        startFace       141575;
+        nFaces          140;
+        startFace       41014;
     }
 )
 
