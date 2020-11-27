@@ -46,8 +46,10 @@ boundaryField
 
     rightWall
     {
-        type            calculated;
-        value           uniform 0;
+        //type            calculated;
+        //value           uniform 0;
+        type            compressible::alphatWallFunction;
+        value           $internalField;
     }
 
     defaultFaces

@@ -47,8 +47,10 @@ boundaryField
 
     rightWall
     {
-        type            inletOutlet;
-        inletValue      $internalField;
+        //type            inletOutlet;
+        //inletValue      $internalField;
+         type            kqRWallFunction;
+        value           $internalField;
     }
     
     defaultFaces

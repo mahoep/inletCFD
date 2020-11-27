@@ -48,8 +48,10 @@ boundaryField
 
     rightWall
     {
-        type            inletOutlet;
-        inletValue      $internalField;
+        //type            inletOutlet;
+        //inletValue      $internalField;
+        //value           $internalField;
+        type            omegaWallFunction;
         value           $internalField;
     }
 

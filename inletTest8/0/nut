@@ -46,7 +46,9 @@ boundaryField
 
     rightWall
     {
-        type            calculated;
+        //type            calculated;
+        //value           uniform 0;
+        type            nutkWallFunction;
         value           uniform 0;
     }
 
