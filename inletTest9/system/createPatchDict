@@ -92,7 +92,7 @@ patches
 
         patchInfo
         {
-            type            wall;
+            type            patch;
         }
 
         constructFrom patches;

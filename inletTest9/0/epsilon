@@ -48,11 +48,11 @@ boundaryField
 
     rightWall
     {
-        //type            inletOutlet;
-        //inletValue      $internalField;
-        //value           $internalField;
-         type            epsilonWallFunction;
+        type            inletOutlet;
+        inletValue      $internalField;
         value           $internalField;
+        //type            epsilonWallFunction;
+        //value           $internalField;
     }
 
     defaultFaces

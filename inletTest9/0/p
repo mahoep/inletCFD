@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0 0 0];
 
-internalField   uniform 1.3e5;
+internalField   uniform 1.49e5;
 
 boundaryField
 {
@@ -31,7 +31,7 @@ boundaryField
     outlet
     {
         type            fixedValue;
-        value           $internalField;
+        value           uniform 1.3e5;
         //type                zeroGradient;
 
        //type            waveTransmissive;
@@ -55,9 +55,9 @@ boundaryField
 
     rightWall
     {
-        //type            fixedValue;
-        //value           uniform 1.49e5;
-        type            zeroGradient;
+        type            fixedValue;
+        value           uniform 1.49e5;
+        //type            zeroGradient;
     }
 
     defaultFaces

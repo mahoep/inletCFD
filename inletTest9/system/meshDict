@@ -88,36 +88,36 @@ meshQualitySettings
 
 objectRefinements
 {
-    /*cone
+    cone
     {
         type        cone;
         cellSize    0.0005;
-        additionalRefinementLevels  2;
-        p0          (0.1021 0.076 0.1);
-        p1          (0.1021 0.076 0);
+        additionalRefinementLevels  1;
+        p0          (0.1025 0.1015 0.1);
+        p1          (0.1025 0.1015 0);
         radius0     0.002;
         radius1     0.002;
-    }*/
+    }
 
     /*
     boxEx
     {
         type            box;
-        cellSize        0.0005;
-        centre          (0.3551 0.0508 0);
+        cellSize        0.001;
+        centre          (0.33551 0.0508 0);
         lengthX         0.01;
         lengthY         0.005;
         lengthZ         0.01;
-    }
-    */
+    }*/
+    
 
     /*
     lineEx
     {
         type            line;
         cellSize        0.001;
-        p0          (0.3551 0.045 0);
-        p1          (0.3551 0 0);
+        p0          (0.33551 0.045 0);
+        p1          (0.33551 0 0);
         refinementThickness        0.005;
     }
     */

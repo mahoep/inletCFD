@@ -17,7 +17,7 @@ FoamFile
 
 application     rhoPimpleFoam;
 
-startFrom       latestTime;
+startFrom       startTime;
 
 startTime       0;
 
@@ -25,11 +25,11 @@ stopAt          endTime;
 
 endTime         0.5;
 
-deltaT          1e-6;
+deltaT          1e-7;
 
 writeControl    adjustableRunTime;
 
-writeInterval   2e-3;
+writeInterval   1e-4;
 
 purgeWrite      0;
 
@@ -47,7 +47,7 @@ runTimeModifiable true;
 
 adjustTimeStep  yes;
 
-maxCo           0.65;
+maxCo           0.1;
 
 maxDeltaT       0.1;
 
